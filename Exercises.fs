@@ -4,7 +4,7 @@ let rec downto1 n =
     then n :: (downto1 (n-1))
     else []
 
-//downto1 4
+downto1 4
 
 let rec downto2 =
     fu
