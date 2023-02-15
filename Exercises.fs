@@ -12,10 +12,17 @@ let rec downto2 =
     | _ -> []
 
 //Exercise 2.2
-let removeOddIdx (xs: 'a list) = [for i in 0..2..xs.Length-1 ->[i]]
+let rec removeOddIdx (xs: 'a list) = 
+    match xs with
+    | [] -> xs
+    | [x] -> xs
+    | head :: second :: tail -> head :: removeOddIdx(tail)
+
+removeOddIdx ["Marry"; "had"; "a"; "little"; "lamb"; "its"; "fleece";
+"was"; "white"; "as"; "snow"];;
 
 //Exercise 2.3
-let combinePair (xs: 'a list) = [for i in 1..2..xs.Length-1 -> (xs.[i-1], xs.[i])]
+let combinePair (xs: 'a list) = 
 
 //Exercise 2.4
 type complex = float * float
