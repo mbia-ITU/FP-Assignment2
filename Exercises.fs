@@ -18,11 +18,15 @@ let rec removeOddIdx (xs: 'a list) =
     | [x] -> xs
     | head :: second :: tail -> head :: removeOddIdx(tail)
 
-removeOddIdx ["Marry"; "had"; "a"; "little"; "lamb"; "its"; "fleece";
-"was"; "white"; "as"; "snow"];;
-
 //Exercise 2.3
-let combinePair (xs: 'a list) = 
+let rec combinePair (xs: 'a list) = 
+    match xs with
+    | [] -> []
+    | [x] -> []
+    | head :: second :: tail -> (head, second) :: combinePair(tail)
+
+combinePair ["Marry"; "had"; "a"; "little"; "lamb"; "its"; "fleece";
+"was"; "white"; "as"; "snow"];;
 
 //Exercise 2.4
 type complex = float * float
