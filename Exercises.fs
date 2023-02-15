@@ -5,7 +5,7 @@ let rec downto1 n =
     else []
 
 let rec downto2 =
-    fu
+    fun
     | n when n > 0 -> n :: (downto2 (n-1))
     | _ -> []
 
